@@ -1,28 +1,22 @@
+## 项目描述
 
+> 该模板基于vue+elementUI进行封装.可以单独下载使用也可以使用手脚架工具 `quicker_cli` 初始化项目
 
-## Getting started
+## `quicker_cli` 工具安装方式
+```js
+npm i -g quicker_cli 
+```
+## 快速开始
 
 ```bash
-# clone the project
-git clone https://github.com/PanJiaChen/vue-element-admin.git
+#下载项目
+git clone https://github.com/wyswill/vue-project-templeates.git
 
-# install dependency
+#安装依赖
 npm install
 
-# develop
+# 运行调试
 npm run dev
-npm lium
 ```
 
-This will automatically open http://localhost:9520.
-
-## Build
-
-```bash
-# build for test environment
-npm run build:sit
-
-# build for production environment
-
-```
-
+该项目将会自动在浏览器打开相应地址 http://localhost:9520.
