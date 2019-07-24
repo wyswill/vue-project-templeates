@@ -7,9 +7,6 @@ Vue.use(Router);
 import Layout from "@/views/layout/Layout";
 import webmanager from "./modules/webmanager";
 import membership from "./modules/membership";
-import orders from "./modules/orders";
-import coupon from "./modules/coupon";
-import advertiser from "./modules/advertiser";
 
 import cutprice from "./modules/cutprice";
 export const constantRouterMap = [
@@ -35,9 +32,6 @@ export const constantRouterMap = [
   { ...webmanager },
   { ...membership },
   { ...cutprice },
-  { ...orders },
-  { ...coupon },
-  { ...advertiser },
   {
     path: "/redirect",
     component: Layout,

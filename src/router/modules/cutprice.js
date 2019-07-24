@@ -1,29 +1,28 @@
 /** When your routing table is too long, you can split it into small modules**/
 
-import Layout from '@/views/layout/Layout'
+import Layout from "@/views/layout/Layout";
 
 const cutpriceRouter = {
-  path: '/cutprice',
+  path: "/cutprice",
   component: Layout,
-  name: 'cutprice',
+  name: "cutprice",
   meta: {
-    title: '砍价管理',
-    icon: 'component'
+    title: "list3",
+    icon: "component"
   },
   children: [
     {
-      path: 'bargain',
-      component: () => import('@/views/cutprice/bargain'),
-      name: 'bargain',
-      meta: { title: '砍价记录' }
+      path: "bargain",
+      component: () => import("@/views/cutprice/item"),
+      name: "bargain",
+      meta: { title: "item" }
     },
     {
-      path: 'bargaindetails',
-      component: () => import('@/views/cutprice/bargaindetails'),
-      name: 'bargaindetails',
-      meta: { title: '查看详细' },
-      hidden: true
+      path: "bargain",
+      component: () => import("@/views/cutprice/item"),
+      name: "bargain",
+      meta: { title: "item" }
     }
   ]
-}
-export default cutpriceRouter
+};
+export default cutpriceRouter;
