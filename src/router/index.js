@@ -6,9 +6,7 @@ Vue.use(Router);
 /* Layout */
 import Layout from "@/views/layout/Layout";
 import webmanager from "./modules/webmanager";
-import membership from "./modules/membership";
 
-import cutprice from "./modules/cutprice";
 export const constantRouterMap = [
   // 首页
   {
@@ -29,9 +27,7 @@ export const constantRouterMap = [
     ]
   },
 
-  { ...webmanager },
-  { ...membership },
-  { ...cutprice },
+  {...webmanager},
   {
     path: "/redirect",
     component: Layout,
@@ -67,8 +63,8 @@ export const constantRouterMap = [
 
 export default new Router({
   // mode: 'history', // require service support
-  scrollBehavior: () => ({ y: 0 }),
+  scrollBehavior: () => ({y: 0}),
   routes: constantRouterMap
 });
 
-export const asyncRouterMap = [{ path: "*", redirect: "/404", hidden: true }];
+export const asyncRouterMap = [{path: "*", redirect: "/404", hidden: true}];
