@@ -21,10 +21,22 @@ import './mock' // simulation data
 
 import * as filters from './filters' // global filters
 
+
+import axios from "axios";
+
+Vue.prototype.$http = axios;
+Vue.prototype.$server = "...";
+
+axios.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+
 Vue.use(Element, {
-  size: Cookies.get('size') || 'medium', // set element-ui default size
+  size: Cookies.get("size") || "medium", // set element-ui default size
   i18n: (key, value) => i18n.t(key, value)
-})
+});
+
+import tinymce from "./components/Tinymce";
+
+Vue.component("tinymce", tinymce);
 
 // register global utility filters.
 Object.keys(filters).forEach(key => {
