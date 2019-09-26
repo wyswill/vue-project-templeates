@@ -21,19 +21,22 @@
 
 <script>
   export default {
-    props: ["discription", "limit", "cb", "removefn", "data", "fileList", "arr"],
+    props: {
+      discription: String,
+      limit: Number,
+      fileList: Array,
+    },
     data() {
-      let url = this.$server + "/console-api/uccn/file/uploadImage";
+      let url = 'http://localhost:3000/uploud';
       return {url, dialogImageUrl: "", dialogVisible: false};
     },
     methods: {
       success(res) {
-        if (this.data) this.cb(res, this.data);
-        else this.cb(res, this.arr);
+        this.fileList.push(res);
       },
       remove(file) {
-        if (this.data) this.removefn(file, this.data);
-        else this.removefn(file, this.arr);
+        let t = JSON.parse(JSON.stringify(this.fileList));
+        this.$emit('update:fileList', t.filter(ele => ele.uid != file.uid));
       },
       exceedHandler() {
       }
