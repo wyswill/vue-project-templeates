@@ -1,7 +1,7 @@
 import axios from "axios";
-import { Message } from "element-ui";
+import {Message} from "element-ui";
 import store from "@/store";
-import { getToken } from "@/utils/auth";
+import {getToken} from "@/utils/auth";
 
 // 返回请求路径URL
 export let commonUrl = () => {
@@ -13,45 +13,38 @@ export let commonRequest = () => {
 };
 
 // 请求前缀
-export let request = obj => {
-  return new Promise(function(resolve, reject) {
-    let baseURL = "";
-    if (obj.method == "post") {
-      axios({
+
+// 请求前缀
+export const request = obj => {
+  return new Promise(function (resolve, reject) {
+    let reqObj = {
+      url: `${commonUrl()}${obj.url}`,
+      method: obj.method,
+      data: obj.data,
+      withCredentials: true
+    };
+    if (obj.method === "post") {
+      reqObj = Object.assign(reqObj, {
         headers: {
           "Content-Type": "application/json;charset=UTF-8"
         },
-        url: baseURL + obj.url,
-        method: obj.method,
-        data: obj.data,
-        withCredentials: true
-      })
-        .then(res => {
-          resolve(res.data);
-        })
-        .catch(function(error) {
-          console.log("请求错误");
-        });
-    } else {
-      axios({
-        url: baseURL + obj.url,
-        method: obj.method,
-        params: obj.data,
-        withCredentials: true
-      })
-        .then(res => {
-          resolve(res.data);
-        })
-        .catch(function(error) {
-          console.log("请求错误");
-        });
+      });
     }
+    axios(reqObj)
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(function (error) {
+        // console.log("请求错误");
+        reject(error);
+      });
   });
 };
 
+
 // create an axios instance
 const service = axios.create({
-  baseURL: process.env.BASE_API, // api 的 base_url
+  baseURL: commonUrl(), // api 的 base_url
   timeout: 5000 // request timeout
 });
 
