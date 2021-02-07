@@ -1,7 +1,7 @@
-import { Injectable }                    from '@nestjs/common';
+import { Injectable }                   from '@nestjs/common';
 import { Connection, createConnection } from 'typeorm';
-import { ObjectStrKey }                  from '../../../../src/types';
-import { dbConfig }                      from '@util/config';
+import { ObjectStrKey }                 from '../../../../src/types';
+import { dbConfig }                     from '@util/config';
 
 export type tabs = {};
 
