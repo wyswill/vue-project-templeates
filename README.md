@@ -1,32 +1,93 @@
-## 盲盒 app h5 页面
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+</p>
 
-- 登陆功能
-  1. 手机号本地缓存
-  2. 验证码
-  3. 微信登陆
-- 首页
-  1. 推荐、关注、活动
-  2. 游戏分类
-  3. banner
-  4. 系统公告
-  5. 盲盒列表
-- 免费盒子
-  1. 盲盒列表
-  2. 下载和看广告
-- 游戏
-  1. 游戏简介和推荐盲盒
-- 我的
-  1. 个人中心
-  2. 余额、游币、优惠卷
-  3. 订单
-  4. 其他
-- 设置
-  1. 头像设置
-  2. 昵称设置
-  3. 收货地址
-  4. 手机号
-  5. 关于
-  6. 退出登陆
 
+## Description
+
+盲盒后台
+
+## 模块完成进度
+
+- [x] 账号系统
+
+  - [x] 创建
+  - [x] 修改
+  - [x] 删除
+
+- [x] 登陆
+
+  - [x] 手机登录
+  - [x] token登录
+
+- [x] 盒子
+
+  - [x] 创建
+  - [x] 修改
+  - [x] 查询
+  - [ ] 开盒子
+
+- [x] 游戏
+
+  - [x] 创建
+  - [x] 修改
+  - [x] 删除
+  - [x] 查询
+  - [x] 绑定盒子
+  - [ ] 关注盒子
+  
+- [x] 订单
+
+  - [x] 创建订单
+  - [x] 查询订单
+  - [x] 修改订单
+  
+- [ ] 资讯
+
+  - [x] banner
+  - [x] 文件上传
+  - [x] 静态资源
+- [ ] 推荐
+  
+  - [ ] 活动
+- [ ] 我的关注
+  
+    
+  
+  
+  
+  
+
+## Installation
+
+```bash
+$ npm install
+```
+
+## Running the app
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+
+## Test
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
 
 

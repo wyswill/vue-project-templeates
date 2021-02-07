@@ -1,11 +1,17 @@
 /*
  * @LastEditors: wyswill
- * @Description: 文件描述
- * @Date: 2020-11-21 13:07:32
- * @LastEditTime: 2020-11-25 13:13:27
+ * @Description: 公共类型文件
+ * @Date: 2021-01-29 15:41:23
+ * @LastEditTime: 2021-01-29 16:38:26
  */
-declare module '*.less' {
-  const classes: { readonly [key: string]: string };
-  export default classes;
+
+import {Logger}     from 'log4js';
+import {Repository} from 'typeorm';
+
+export type ObjectStrKey<T> = {
+  [K in keyof T]: Repository<T[K]>;
 }
 
+declare interface global {
+  logger: Logger
+}
