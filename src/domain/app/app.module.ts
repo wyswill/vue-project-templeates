@@ -1,24 +1,9 @@
-import { Module } from '@nestjs/common';
-import { DbModule } from 'src/db/db.module';
+import { Module }        from '@nestjs/common';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { AuthModule } from '../auth/auth.module';
-import { LoginModule } from '../login/login.module';
-import { AccountModule } from '../account/account.module';
-import { LogModule } from '../log/log.module';
-import { FileUploadModule } from '../file-upload/file-upload.module';
+import LibModule         from '@app/app/app.module';
 
 @Module({
-  imports: [
-    DbModule,
-    AuthModule,
-    LoginModule,
-    AccountModule,
-    LogModule,
-    FileUploadModule,
-  ],
-  controllers: [AppController],
-  providers: [AppService],
-  exports: [AppService],
-})
+          imports    : [LibModule],
+          controllers: [AppController],
+        })
 export class AppModule {}

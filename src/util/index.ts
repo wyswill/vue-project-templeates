@@ -47,7 +47,7 @@ export function cryptoPassword(passWord: string): string {
  * @param newPass 新的密码
  * @param olds 旧密码
  */
-export const compaerPassword = (newPass: string, olds: string): boolean => {
+export const comparePassword = (newPass: string, olds: string): boolean => {
   const crypt = cryptoPassword(newPass);
   return crypt === olds;
 };

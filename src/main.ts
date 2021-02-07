@@ -1,10 +1,10 @@
 import { NestFactory }                              from '@nestjs/core';
 import { AppModule }                                from './domain/app/app.module';
 import { ValidationPipe }                           from '@nestjs/common';
-import { configLogger, initExceptionCatch, logger } from './utiles';
-import { LogInterceptor }                           from './domain/log/log.interceptor';
+import { configLogger, initExceptionCatch, logger } from './util';
+import { LogInterceptor }                           from '../libs/app/src/log/log.interceptor';
 import * as session                                 from 'express-session';
-import { encryptKey }                               from './utiles/config';
+import { encryptKey }                               from './util/config';
 
 async function bootstrap() {
   await initExceptionCatch();

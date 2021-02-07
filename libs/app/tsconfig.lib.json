@@ -1,0 +1,31 @@
+{
+  "extends"        :"../../tsconfig.json",
+  "compilerOptions":{
+    "declaration"           :true,
+    "outDir"                :"../../dist/libs/app",
+    "emitDecoratorMetadata" :true,
+    "experimentalDecorators":true
+  },
+  "include"        :[
+    "src/**/*"
+  ],
+  "exclude"        :[
+    "node_modules",
+    "dist",
+    "test",
+    "**/*spec.ts"
+  ],
+  "paths"          :{
+    "@app/app"  :[
+      "libs/app/src/log",
+      "libs/app/src/auth",
+      "libs/app/src"
+    ],
+    "@app/app/*":[
+      "libs/app/src/*"
+    ],
+    "@util/*"   :[
+      "src/util/*"
+    ]
+  }
+}

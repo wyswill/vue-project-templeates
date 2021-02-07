@@ -1,4 +1,4 @@
-import { BaseResponse }           from './../../utiles/index';
+import { BaseResponse }           from '../../../../src/util';
 import {
   BadGatewayException,
   CallHandler,
@@ -7,7 +7,7 @@ import {
   NestInterceptor
 }                                 from '@nestjs/common';
 import { Observable, throwError } from 'rxjs';
-import { logger }                 from '../../utiles';
+import { logger }                 from '../../../../src/util';
 import { catchError, tap }        from 'rxjs/operators';
 import { IncomingMessage }        from 'http';
 

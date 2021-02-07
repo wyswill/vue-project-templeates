@@ -4,4 +4,4 @@ import { LogInterceptor } from "./log.interceptor";
 @Module({
           providers: [LogInterceptor]
         })
-export class LogModule {}
+export default class LogModule {}

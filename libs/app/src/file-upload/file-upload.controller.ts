@@ -1,7 +1,7 @@
 import { Controller, Post, UploadedFiles, UseGuards, UseInterceptors } from "@nestjs/common";
 import { FileUploadService }                                           from "./file-upload.service";
 import { FilesInterceptor }                                            from "@nestjs/platform-express";
-import { Auth }                                                        from "../auth/auth.service";
+import { Auth }                                                        from '@app/app/auth/auth.service';
 
 @Controller("file-upload")
 export class FileUploadController {

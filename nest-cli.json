@@ -1,10 +1,22 @@
 {
-  "collection"     :"@nestjs/schematics",
-  "sourceRoot"     :"src",
-  "compilerOptions":{
-    "deleteOutDir":true
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true
   },
-  "generateOptions":{
-    "spec":false
+  "generateOptions": {
+    "spec": false
+  },
+  "projects": {
+    "app": {
+      "type": "library",
+      "root": "libs/app",
+      "entryFile": "index",
+      "sourceRoot": "libs/app/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/app/tsconfig.lib.json"
+      }
+    }
   }
 }

@@ -16,4 +16,4 @@ import {CacheService}   from './cache.service';
           providers: [DbProvider, CacheService],
           exports  : [DbProvider, CacheService]
         })
-export class DbModule {}
+export default class DbModule {}
