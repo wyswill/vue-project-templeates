@@ -93,8 +93,8 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "@app/app/(.*)": "<rootDir>/libs/app/src/$1",
-      "@app/app": "<rootDir>/libs/app/src"
+      "@libs/lib/(.*)": "<rootDir>/libs/lib/src/$1",
+      "@libs/lib": "<rootDir>/libs/lib/src"
     }
   }
 }
