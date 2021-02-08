@@ -2,7 +2,7 @@ import { NestFactory }                              from '@nestjs/core';
 import { AppModule }                                from './domain/app/app.module';
 import { ValidationPipe }                           from '@nestjs/common';
 import { configLogger, initExceptionCatch, logger } from './util';
-import { LogInterceptor }                           from '../libs/app/src/log/log.interceptor';
+import { LogInterceptor }                           from '../libs/lib/src/log/log.interceptor';
 import * as session                                 from 'express-session';
 import { encryptKey }                               from './util/config';
 

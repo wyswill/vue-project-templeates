@@ -6,7 +6,7 @@ import { dbConfig }                     from '@util/config';
 export type tabs = {};
 
 @Injectable()
-export class DbProvider {
+export class Db {
   protected connect: Connection;
 
   public RepoMap: ObjectStrKey<tabs> = {};

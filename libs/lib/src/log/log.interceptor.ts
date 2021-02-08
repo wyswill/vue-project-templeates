@@ -1,13 +1,13 @@
-import { BaseResponse }           from '../../../../src/util';
+import { BaseResponse } from '@util/index';
 import {
   BadGatewayException,
   CallHandler,
   ExecutionContext,
   Injectable,
   NestInterceptor
-}                                 from '@nestjs/common';
+}                       from '@nestjs/common';
 import { Observable, throwError } from 'rxjs';
-import { logger }                 from '../../../../src/util';
+import { logger }                 from '@util/index';
 import { catchError, tap }        from 'rxjs/operators';
 import { IncomingMessage }        from 'http';
 

@@ -15,17 +15,4 @@
     "test",
     "**/*spec.ts"
   ],
-  "paths"          :{
-    "@app/app"  :[
-      "libs/app/src/log",
-      "libs/app/src/auth",
-      "libs/app/src"
-    ],
-    "@app/app/*":[
-      "libs/app/src/*"
-    ],
-    "@util/*"   :[
-      "src/util/*"
-    ]
-  }
 }

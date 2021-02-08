@@ -16,13 +16,13 @@
       "./node_modules/@types"
     ],
     "paths"                       :{
-      "@app/app"  :[
-        "libs/app/src/log",
-        "libs/app/src/auth",
-        "libs/app/src"
+      "@libs/lib"  :[
+        "libs/lib/src/log",
+        "libs/lib/src/auth",
+        "libs/lib/src"
       ],
-      "@app/app/*":[
-        "libs/app/src/*"
+      "@libs/lib/*":[
+        "libs/lib/src/*"
       ],
       "@util/*"   :[
         "src/util/*"

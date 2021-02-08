@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Observable }                                from 'rxjs';
-import { CacheService }                              from '@app/app/db/cache.service';
+import { CacheService }                              from '@libs/lib/db/cache.service';
 
 @Injectable()
 export class Auth implements CanActivate {

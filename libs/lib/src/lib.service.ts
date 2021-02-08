@@ -1,11 +1,11 @@
 import { Injectable }           from '@nestjs/common';
 import { Repository }           from 'typeorm';
 import { BaseResponse, logger } from '@util/index';
-import * as _                   from 'lodash';
-import { DbProvider }           from '@app/app/db/dbProvider';
+import * as _         from 'lodash';
+import { DbProvider } from '@libs/lib/db/db.provider';
 
 @Injectable()
-export default class AppService {
+export default class LibService {
   constructor(protected readonly db: DbProvider) {}
 
   async queryList(size: number, page: number, dbName: string, where?: object) {

@@ -1,7 +1,7 @@
 import { Global, Module } from '@nestjs/common';
-import { DbProvider }     from './dbProvider';
 import { RedisModule }    from 'nestjs-redis';
 import { CacheService }   from './cache.service';
+import { Db }             from '@libs/lib/db/db.provider';
 
 @Global()
 @Module({
@@ -13,7 +13,7 @@ import { CacheService }   from './cache.service';
                                    db      : 1
                                  })
           ],
-          providers: [DbProvider, CacheService],
-          exports  : [DbProvider, CacheService]
+          providers: [Db, CacheService],
+          exports  : [Db, CacheService]
         })
 export default class DbModule {}
