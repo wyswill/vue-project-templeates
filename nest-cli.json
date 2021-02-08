@@ -9,13 +9,13 @@
     "spec": false
   },
   "projects": {
-    "app": {
+    "lib": {
       "type": "library",
-      "root": "libs/app",
+      "root": "libs/lib",
       "entryFile": "index",
-      "sourceRoot": "libs/app/src",
+      "sourceRoot": "libs/lib/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/app/tsconfig.lib.json"
+        "tsConfigPath": "libs/lib/tsconfig.lib.json"
       }
     }
   }
