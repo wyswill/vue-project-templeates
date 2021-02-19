@@ -19,7 +19,7 @@ export class Db {
                        port                 : dbConfig.port,
                        username             : dbConfig.user,
                        password             : dbConfig.password,
-                       entities             : [`${__dirname}/entitys/*.entity{.ts,.js}`],
+                       entities             : [`${__dirname}/entity/*.entity{.ts,.js}`],
                        synchronize          : true,
                        maxQueryExecutionTime: 1000
                      }).then((connect: Connection) => {
