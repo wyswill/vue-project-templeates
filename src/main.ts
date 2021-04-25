@@ -2,18 +2,18 @@
  * @LastEditors: wyswill
  * @Description: 主文件
  * @Date: 2021-04-25 17:40:03
- * @LastEditTime: 2021-04-25 18:03:51
+ * @LastEditTime: 2021-04-25 18:09:43
  */
 require("dotenv").config();
-import { NestFactory } from "@nestjs/core";
-import { AppModule } from "./domain/app/app.module";
-import { ValidationPipe } from "@nestjs/common";
-import { LogInterceptor } from "../libs/lib/src/log/log.interceptor";
-import * as session from "express-session";
-import { encryptKey } from "./util/config";
 import MailService from "@libs/lib/meil/mail.service";
+import { ValidationPipe } from "@nestjs/common";
+import { NestFactory } from "@nestjs/core";
 import { logger } from "@util/log";
-
+import * as session from "express-session";
+import { LogInterceptor } from "../libs/lib/src/log/log.interceptor";
+import { AppModule } from "./domain/app/app.module";
+import { encryptKey } from "./util/config";
+declare const module: any;
 async function init() {
   process.on("uncaughtException", async err => {
     logger.error(err, "uncaughtException");
@@ -46,7 +46,17 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalInterceptors(new LogInterceptor());
 
-  await app.listen(3000);
+  await app.listen(process.env.port ?? 3003, () => {
+    console.log(
+      `服务启动在:http://localhost:${
+        process.env.port ?? 3003
+      },文档地址:http://localhost:${process.env.port ?? 3003}/doc`,
+    );
+  });
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 }
 init().then(async () => {
   await bootstrap();

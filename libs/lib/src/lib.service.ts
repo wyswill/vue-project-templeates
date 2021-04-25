@@ -43,4 +43,8 @@ export default class LibService {
       }
     }
   }
+
+  authCode() {
+    return 0;
+  }
 }
