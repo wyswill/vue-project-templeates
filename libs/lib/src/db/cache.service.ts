@@ -1,17 +1,13 @@
-import { Injectable }   from '@nestjs/common';
-import { RedisService } from 'nestjs-redis';
+/*
+ * @LastEditors: wyswill
+ * @Description: 
+ * @Date: 2021-04-25 17:40:03
+ * @LastEditTime: 2021-04-25 17:50:10
+ */
+import { Redis } from "ioredis";
 
-@Injectable()
 export class CacheService {
-  private client: any;
-
-  constructor(private redisService: RedisService) {
-    this.getClient();
-  }
-
-  private async getClient() {
-    this.client = await this.redisService.getClient();
-  }
+  constructor(protected readonly client: Redis) {}
 
   /**
    * @Description: 封装设置redis缓存的方法
@@ -22,14 +18,10 @@ export class CacheService {
    */
   public async set(key: string, value: any, seconds?: number): Promise<any> {
     value = JSON.stringify(value);
-    if (!this.client) {
-      await this.getClient();
-    }
     if (!seconds) {
       await this.client.set(key, value);
-    }
-    else {
-      await this.client.set(key, value, 'EX', seconds);
+    } else {
+      await this.client.set(key, value, "EX", seconds);
     }
   }
 
@@ -37,17 +29,12 @@ export class CacheService {
    * @Description: 设置获取redis缓存中的值
    * @param key {String}
    */
-  public async get(key: string): Promise<any> {
-    if (!this.client) {
-      await this.getClient();
-    }
-
-    let data = await this.client.get(key);
+  public async get(key: string) {
+    const data = await this.client.get(key);
 
     if (data) {
       return JSON.parse(data);
-    }
-    else {
+    } else {
       return null;
     }
   }
@@ -58,9 +45,6 @@ export class CacheService {
    * @return:
    */
   public async del(key: string): Promise<any> {
-    if (!this.client) {
-      await this.getClient();
-    }
     await this.client.del(key);
   }
 
@@ -68,10 +52,24 @@ export class CacheService {
    * @Description: 清空redis的缓存
    */
   public async flushall(): Promise<any> {
-    if (!this.client) {
-      await this.getClient();
-    }
-
     await this.client.flushall();
+  }
+
+  /**
+   * set存储
+   * @param key set名称
+   * @param value 值数组
+   */
+  public async sadd(key: any, ...value: any[]) {
+    return await this.client.sadd(key, value);
+  }
+
+  /**
+   * 随机从set中取出数据
+   * @param key set名
+   * @param count 数据数量默认 0
+   */
+  public async randomGet(key: string, count: number = 0): Promise<string[]> {
+    return await this.client.send_command(`SRANDMEMBER`, [key, count]);
   }
 }

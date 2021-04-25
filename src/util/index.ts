@@ -1,34 +1,22 @@
-import { encryptKey }           from './config';
-import * as crypto              from 'crypto';
-import { configure, getLogger } from 'log4js';
-import * as moment              from 'moment';
-import { timeFmt }              from './constant';
+/*
+ * @LastEditors: wyswill
+ * @Description:
+ * @Date: 2021-03-22 15:14:39
+ * @LastEditTime: 2021-04-25 17:57:41
+ */
+import { encryptKey } from "./config";
+import crypto from "crypto";
+import moment from "moment";
+import { timeFmt } from "./constant";
+import _ from "lodash";
 
-const token = require('token');
-export const configLogger = async () => {
-  configure({
-              appenders : {
-                access: {
-                  type      : 'dateFile',
-                  filename  : './log/access.log',
-                  pattern   : 'yyyy-MM-dd',
-                  level     : 'LOG',
-                  category  : 'normal',
-                  maxLogSize: 2097152
-                },
-                debug : {type: 'stdout'}
-              },
-              categories: {
-                default: {appenders: ['debug'], level: 'all'},
-                onLine : {appenders: ['access'], level: 'all'}
-              }
-            });
-};
-let dotenv = require('dotenv');
-dotenv.config('../../env');
-export const logger = getLogger(Boolean(process.env.isDebug) ? 'default' : 'onLine');
+const token = require("token");
 token.defaults.secret = encryptKey;
 token.defaults.timeStep = 30 * 60;
+
+export function genCode(min: number = 1000, max = 9999) {
+  return _.random(min, max, false);
+}
 
 /**
  * @author wyswill
@@ -37,7 +25,7 @@ token.defaults.timeStep = 30 * 60;
  * @param passWord 要加密的秘码
  */
 export function cryptoPassword(passWord: string): string {
-  return crypto.createHmac('sha256', encryptKey).update(passWord).digest('hex');
+  return crypto.createHmac("sha256", encryptKey).update(passWord).digest("hex");
 }
 
 /**
@@ -66,8 +54,7 @@ export class BaseResponse<T> {
  * @date 2021/1/30-2:19 下午
  * @description 获取redis 存储时间
  */
-export const loginTime = 3600;
-
+export const loginTime = 604800; //7 days
 /**
  * @author wyswill
  * @date 2021/1/30-2:27 下午
@@ -79,12 +66,3 @@ export function genToken(info: string): string {
 }
 
 export const getTime = (fmt: timeFmt = timeFmt.YMD_HMS) => moment().format(fmt);
-
-export const initExceptionCatch = async () => {
-  process.on('uncaughtException', err => {
-    logger.error(err, 'uncaughtException');
-  });
-  process.on('unhandledRejection', (reason, p) => {
-    logger.error(reason, 'unhandledRejection', p);
-  });
-};

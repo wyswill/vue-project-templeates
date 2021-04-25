@@ -1,15 +1,15 @@
 {
-  "extends"        :"../../tsconfig.json",
-  "compilerOptions":{
-    "declaration"           :true,
-    "outDir"                :"../../dist/libs/app",
-    "emitDecoratorMetadata" :true,
-    "experimentalDecorators":true
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "../../dist/libs/app",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
-  "include"        :[
+  "include": [
     "src/**/*"
   ],
-  "exclude"        :[
+  "exclude": [
     "node_modules",
     "dist",
     "test",

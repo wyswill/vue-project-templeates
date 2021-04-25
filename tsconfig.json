@@ -1,31 +1,38 @@
 {
-  "compilerOptions":{
-    "module"                      :"commonjs",
-    "declaration"                 :true,
-    "removeComments"              :true,
-    "emitDecoratorMetadata"       :true,
-    "experimentalDecorators"      :true,
-    "allowSyntheticDefaultImports":true,
-    "target"                      :"es2017",
-    "sourceMap"                   :true,
-    "outDir"                      :"./dist",
-    "baseUrl"                     :"./",
-    "incremental"                 :true,
-    "typeRoots"                   :[
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "typeRoots": [
       "./src/types",
       "./node_modules/@types"
     ],
-    "paths"                       :{
-      "@libs/lib"  :[
-        "libs/lib/src/log",
-        "libs/lib/src/auth",
-        "libs/lib/src"
-      ],
-      "@libs/lib/*":[
+    "paths": {
+      "@libs/lib/*": [
         "libs/lib/src/*"
       ],
-      "@util/*"   :[
+      "@util/*": [
         "src/util/*"
+      ],
+      "@Lotypes/*": [
+        "src/types/*"
+      ],
+      "@domain/*": [
+        "src/domain/*"
+      ],
+      "@imgs/*": [
+        "imgs/*"
+      ],
+      "@decorator/*": [
+        "src/decorator/*"
       ]
     }
   }
