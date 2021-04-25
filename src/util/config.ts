@@ -33,3 +33,9 @@ export const emailConf = {
   user: "1151373571@qq.com",
   pass: "ljwcmpfwszifjcab",
 };
+export const qiniuConf = {
+  accessKey: "915Eb2eYVVJAqax38FTs05BTk-leg9Mm8sYYNq2r",
+  secretKey: "hDEKoa0RK5z-r-9cMRJvFPBaQ4z6QPDG4b8CehPU",
+  bucket: "twitte",
+  url: "ss1.gupiao66.com",
+};

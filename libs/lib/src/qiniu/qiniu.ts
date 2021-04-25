@@ -1,4 +1,4 @@
-import { UpFile } from "@Lotypes/main";
+import { UpFile } from "@Lotypes/index";
 import { Injectable } from "@nestjs/common";
 import qiniu from "qiniu";
 import path from "path";
@@ -6,24 +6,19 @@ import fs from "fs";
 import { logger } from "@util/log";
 import request from "request";
 import { DbProvider } from "@libs/lib/db/dbProvider";
+import { qiniuConf } from "@util/config";
 
 @Injectable()
 export class Qiniu {
   constructor(private readonly db: DbProvider) {}
   filePrefix = "libs/lib/src/qiniu/";
-  private config = {
-    accessKey: "915Eb2eYVVJAqax38FTs05BTk-leg9Mm8sYYNq2r",
-    secretKey: "hDEKoa0RK5z-r-9cMRJvFPBaQ4z6QPDG4b8CehPU",
-    bucket: "twitte",
-    url: "ss1.gupiao66.com",
-  };
 
   protected token;
 
   private getToken() {
-    const putPolicy = new qiniu.rs.PutPolicy({ scope: this.config.bucket });
-    const accessKey = this.config.accessKey;
-    const secretKey = this.config.secretKey;
+    const putPolicy = new qiniu.rs.PutPolicy({ scope: qiniuConf.bucket });
+    const accessKey = qiniuConf.accessKey;
+    const secretKey = qiniuConf.secretKey;
     const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
     this.token = putPolicy.uploadToken(mac);
     return this.token;
@@ -50,9 +45,7 @@ export class Qiniu {
       config.zone = qiniu.zone.Zone_z2;
       const formUploader = new qiniu.form_up.FormUploader(config);
       const putExtra = new qiniu.form_up.PutExtra();
-      const {
-        config: { url },
-      } = this;
+      const { url } = qiniuConf;
       formUploader.putFile(
         token,
         base,
