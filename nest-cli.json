@@ -1,9 +1,18 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "src/domain",
   "compilerOptions": {
     "deleteOutDir": true,
-    "webpack": false
+    "webpack": false,
+    "webpackConfigPath": "webpack.config.js",
+    "assets": [
+      {
+        "include": "**/*.mjs"
+      }
+    ],
+    "plugins": [
+      "@nestjs/swagger/plugin"
+    ]
   },
   "generateOptions": {
     "spec": false
