@@ -2,15 +2,15 @@
  * @LastEditors: wyswill
  * @Description: 配置
  * @Date: 2021-04-25 17:40:03
- * @LastEditTime: 2021-04-25 17:55:43
+ * @LastEditTime: 2021-04-25 18:11:25
  */
-const host = "localhost";
+const host = "weita.online";
 export const dbConfig = {
-  type: "",
-  port: 0,
-  username: " ",
-  password: " ",
-  database: " ",
+  type: "mongodb",
+  port: 27017,
+  username: "root",
+  password: "wyswilladmin",
+  database: "twitter",
   synchronize: true,
   logging: false,
   useUnifiedTopology: true,
