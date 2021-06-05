@@ -1,5 +1,5 @@
 {
-  "name": "cloud",
+  "name": "test",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,27 +7,23 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "axios": "^0.19.0",
-    "core-js": "^2.6.5",
-    "element": "^0.1.4",
-    "element-ui": "^2.12.0",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3"
+    "core-js": "^3.6.5",
+    "normalizecss": "^3.0.0",
+    "vue": "^3.0.0",
+    "vue-class-component": "^8.0.0-0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.9.0",
-    "@vue/cli-service": "^3.9.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
     "less": "^3.0.4",
-    "less-loader": "^4.1.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "less-loader": "^5.0.0",
+    "postcss-px2rem": "^0.3.0",
+    "typescript": "~4.1.5"
+  }
 }
