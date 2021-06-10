@@ -1,0 +1,16 @@
+syntax = "proto3";
+package aha;
+
+
+service aha_service {
+  rpc FindOne (Addd) returns (ADdRes) {}
+}
+
+message Addd {
+  int32 id = 1;
+}
+
+message ADdRes {
+  int32 id = 1;
+  string name = 2;
+}
