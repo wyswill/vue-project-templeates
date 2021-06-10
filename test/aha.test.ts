@@ -2,13 +2,12 @@
  * @LastEditors: wyswill
  * @Description:
  * @Date: 2021-06-09 18:25:32
- * @LastEditTime: 2021-06-10 13:44:34
+ * @LastEditTime: 2021-06-10 14:04:01
  */
 
-import { aha } from '@src/rpc/bundle';
 import path from 'path';
 import RpcQuery from './base';
-
+import { aha } from '../src/rpc/bundle';
 const rq = new RpcQuery({
   host: 'localhost:50051',
   filepath: path.resolve('../src/rpc/aha.proto'),

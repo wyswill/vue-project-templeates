@@ -17,21 +17,28 @@
     "typeRoots": [
       "./src/types",
       "./node_modules/@types",
-      "./src/rpc"
+      "src/rpc"
     ],
     "paths": {
       "@src/*": [
         "./src/*"
+      ],
+      "@libs/*": [
+        "./libs/src/*"
+      ],
+      "@rpc/*": [
+        "src/rpc/*"
       ]
     }
   },
   "include": [
     "./src/**/*",
-    "./test/**/*"
+    "./test/**/*",
+    "src/rpc"
   ],
   "exclude": [
     "node_modules",
     "release",
-    "dist",
+    "dist"
   ]
 }

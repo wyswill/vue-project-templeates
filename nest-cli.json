@@ -6,9 +6,7 @@
     "webpack": false,
     "webpackConfigPath": "webpack.config.js",
     "assets": [
-      "**/*.proto",
-      "**/*.js",
-      "**/*.d.ts"
+      "**/*.proto"
     ]
   },
   "generateOptions": {
@@ -17,11 +15,11 @@
   "projects": {
     "lib": {
       "type": "library",
-      "root": "libs/lib",
+      "root": "libs/",
       "entryFile": "index",
-      "sourceRoot": "libs/lib/src",
+      "sourceRoot": "libs/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/lib/tsconfig.lib.json"
+        "tsConfigPath": "libs/tsconfig.lib.json"
       }
     }
   }
