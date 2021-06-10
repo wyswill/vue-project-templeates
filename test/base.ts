@@ -2,7 +2,7 @@
  * @LastEditors: wyswill
  * @Description: 请求base
  * @Date: 2021-06-09 16:50:20
- * @LastEditTime: 2021-06-09 18:27:08
+ * @LastEditTime: 2021-06-10 18:15:39
  */
 import grpc from 'grpc';
 

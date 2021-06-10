@@ -3,11 +3,19 @@ package hero;
 
 
 service hero_service {
-  rpc FindOne (HeroById) returns (Hero) {}
+  rpc Test (test) returns (Hero) {}
 }
 
 message HeroById {
   int32 id = 1;
+  message Userinfo{
+    string name=1;
+    int32 age=2;
+  }
+}
+
+message test{
+  HeroById.Userinfo info=1;
 }
 
 message Hero {

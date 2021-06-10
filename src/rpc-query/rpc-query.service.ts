@@ -2,7 +2,7 @@
  * @LastEditors: wyswill
  * @Description:
  * @Date: 2021-06-10 11:03:37
- * @LastEditTime: 2021-06-10 15:34:52
+ * @LastEditTime: 2021-06-10 17:54:52
  */
 import { Injectable } from '@nestjs/common';
 import { baseOpt, GrpcConfig } from '@src/util/serverconf';
