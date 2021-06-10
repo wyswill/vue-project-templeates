@@ -3,7 +3,7 @@
  # @LastEditors: wyswill
  # @Description: 
  # @Date: 2021-06-04 17:54:00
- # @LastEditTime: 2021-06-10 13:48:35
+ # @LastEditTime: 2021-06-10 15:33:29
 ### 
 echo "generate bundle.js"
 cd ./src/rpc

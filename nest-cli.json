@@ -11,16 +11,5 @@
   },
   "generateOptions": {
     "spec": false
-  },
-  "projects": {
-    "lib": {
-      "type": "library",
-      "root": "libs/",
-      "entryFile": "index",
-      "sourceRoot": "libs/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/tsconfig.lib.json"
-      }
-    }
   }
 }

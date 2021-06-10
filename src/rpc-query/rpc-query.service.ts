@@ -2,7 +2,7 @@
  * @LastEditors: wyswill
  * @Description:
  * @Date: 2021-06-10 11:03:37
- * @LastEditTime: 2021-06-10 15:17:35
+ * @LastEditTime: 2021-06-10 15:34:52
  */
 import { Injectable } from '@nestjs/common';
 import { baseOpt, GrpcConfig } from '@src/util/serverconf';
@@ -16,7 +16,7 @@ interface Client {
 @Injectable()
 export class RpcQueryService {
   clients: Client = { hero_service: undefined };
-  fileDir = path.resolve(__dirname, '../../rpc');
+  fileDir = path.resolve(__dirname, '../rpc');
   constructor() {
     fs.readdirSync(this.fileDir)
       .filter(fileName => fileName.endsWith('.proto'))
