@@ -9,5 +9,5 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './assets/rem'
-import 'node_modules/normalizecss/normalize.css'
+import '../node_modules/normalizecss/normalize.css'
 createApp(App).use(store).use(router).mount('#app')
