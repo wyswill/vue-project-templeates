@@ -11,9 +11,7 @@ import { aha } from '../src/rpc/bundle';
 import RpcQuery from './base';
 const rq = new RpcQuery({
   host: 'localhost:50051',
-  filepath: path.resolve(__dirname, '../dist/rpc/aha.proto'),
   packge: 'aha',
-  service: 'aha_service',
 });
 const client = rq.getClient<aha.aha_service>();
 client.login = promisify(client.login);
