@@ -12,6 +12,6 @@ export const grpcClientOptions: ClientOptions = {
   options: {
     url: 'localhost:50051',
     package: pkg.name,// 这里的包名和proto 里的包要一致
-    protoPath: join(__dirname, `rpc/${pkg.name}.proto`),
+    protoPath: join(__dirname, `../rpc/${pkg.name}.proto`),
   },
 };
