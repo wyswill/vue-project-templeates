@@ -11,7 +11,8 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch"
+    "start:debug": "nest start --debug --watch",
+    "conver": "cd ./src/rpc && npx  pbjs -t static-module -w commonjs -o bundle.js *.proto && npx pbts -o bundle.d.ts bundle.js"
   },
   "dependencies": {
     "@grpc/proto-loader": "^0.6.2",
